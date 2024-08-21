@@ -18,7 +18,7 @@
             <thead>
                 <tr style="text-align: center;">
                     <th>No</th>
-                    <th>Nik</th>
+                    <th>NIK</th>
                     <th>Nama Lengkap</th>
                     <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>

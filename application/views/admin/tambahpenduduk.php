@@ -21,7 +21,7 @@
                 <select class="form-control" id="rw" name="rw">
                     <?php
                     // Buat array dari 1 sampai 30 untuk RW
-                    $rw_options = range(1, 30);
+                    $rw_options = range(1, 19);
 
                     // Loop untuk menampilkan pilihan RW
                     foreach ($rw_options as $rw) {
