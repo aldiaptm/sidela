@@ -9,14 +9,14 @@ class Databerpindahtempat_model extends CI_Model
         parent::__construct();
         $this->load->database();
     }
-    
+
     public function get_detail_pindah_by_name($nama)
     {
         // Query database untuk mendapatkan detail berpindah tempat berdasarkan nama penduduk
         $this->db->where('nama', $nama);
         return $this->db->get('detail_pindah')->result_array(); // Ganti 'nama_tabel' dengan nama tabel yang benar
     }
-    
+
     // Fungsi untuk mengambil semua data dari tabel detail_meninggal
     public function get_all_detail_pindah()
     {
@@ -26,7 +26,7 @@ class Databerpindahtempat_model extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
-    
+
     public function get_id_penduduk_by_name($nama)
     {
         $this->db->select('id_penduduk');
@@ -43,11 +43,10 @@ class Databerpindahtempat_model extends CI_Model
 
     public function hapus_data($id_penduduk, $detail_pindah)
     {
-        // Implementasi penghapusan data dari tabel berdasarkan $id_penduduk
-        // Contoh:
         $this->db->where('id_penduduk', $id_penduduk);
-        $this->db->delete($detail_pindah);
+        return $this->db->delete($detail_pindah);
     }
+
 
     // Hapus deklarasi berikut:
     /*
@@ -68,15 +67,14 @@ class Databerpindahtempat_model extends CI_Model
         );
         $this->db->where('id_penduduk', $id_penduduk);
         $this->db->update('detail_pindah', $data);
-    }public function get_detail_pindah_by_status($status_persetujuan)
-{
-    // Memilih data berdasarkan status persetujuan
-    $this->db->where('status_persetujuan', $status_persetujuan);
-    $this->db->select('dp.*, p.nama as nama_penduduk'); // Memilih semua kolom dari detail_meninggal dan nama dari tabel penduduk
-    $this->db->from('detail_pindah dp');
-    $this->db->join('penduduk p', 'dp.id_penduduk = p.id_penduduk'); // Melakukan join dengan tabel penduduk berdasarkan id_penduduk
-    return $this->db->get()->result();
+    }
+    public function get_detail_pindah_by_status($status_persetujuan)
+    {
+        // Memilih data berdasarkan status persetujuan
+        $this->db->where('status_persetujuan', $status_persetujuan);
+        $this->db->select('dp.*, p.nama as nama_penduduk'); // Memilih semua kolom dari detail_meninggal dan nama dari tabel penduduk
+        $this->db->from('detail_pindah dp');
+        $this->db->join('penduduk p', 'dp.id_penduduk = p.id_penduduk'); // Melakukan join dengan tabel penduduk berdasarkan id_penduduk
+        return $this->db->get()->result();
+    }
 }
-
-}
-?>

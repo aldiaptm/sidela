@@ -14,7 +14,7 @@ class Hapusmd extends CI_Controller
         // Verifikasi apakah pengguna adalah admin
         if (!$this->session->userdata('admin_data')) {
             // Jika bukan admin, arahkan kembali ke halaman sebelumnya atau lakukan tindakan lain
-            redirect('admin/daftarmd');
+            redirect('admin/mutasimd');
         }
 
         // Panggil model untuk menghapus data dari tabel 'daftarmd' berdasarkan ID penduduk
@@ -37,8 +37,6 @@ class Hapusmd extends CI_Controller
         }
 
         // Redirect kembali ke halaman daftarmd setelah operasi penghapusan selesai
-        redirect('admin/daftarmd');
+        redirect('admin/mutasimd');
     }
-
 }
-?>

@@ -3,20 +3,28 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Hapusberpindahtempat extends CI_Controller
 {
-    public function hapus($id_penduduk)
+    public function __construct()
     {
-        // Memuat model
-        $this->load->model('Databerpindahtempat_model');
-
-        // Memanggil fungsi hapus_data dari model Databerpindahtempat_model
-        $this->Databerpindahtempat_model->hapus_data($id_penduduk, "penduduk");
-
-        // Set notifikasi bahwa data sudah dihapus
-        $this->session->set_flashdata('message', 'Data penduduk berhasil dihapus.');
-
-        // Redirect ke halaman admin/mutasibt setelah penghapusan
-        redirect('admin/mutasibt');
+        parent::__construct();
+        $this->load->model('databerpindahtempat_model'); // Memuat model yang benar
     }
 
+    public function hapus($id_penduduk)
+    {
+        if (!$this->session->userdata('admin_data')) {
+            redirect('admin/mutasibt');
+        }
 
+        // Panggil model untuk menghapus data dari tabel 'detail_pindah' berdasarkan ID penduduk
+        $hapus_status = $this->databerpindahtempat_model->hapus_data($id_penduduk, 'detail_pindah');
+
+        if ($hapus_status) {
+            $this->session->set_flashdata('message', 'Data berhasil dihapus.');
+        } else {
+            $this->session->set_flashdata('message', 'Gagal menghapus data.');
+        }
+
+        // Redirect kembali ke halaman daftar setelah operasi penghapusan selesai
+        redirect('admin/mutasibt');
+    }
 }

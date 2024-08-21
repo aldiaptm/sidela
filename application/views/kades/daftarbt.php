@@ -99,7 +99,7 @@ if (!$this->session->userdata('admin_data')) {
                         </td>
                         <td>
                             <div class="btn-group">
-                                <a href="<?= base_url('admin/hapusmd/hapus/' . $data->id_penduduk) ?>" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin ingin menghapus?');">
+                                <a href="<?= base_url('admin/hapusberpindahtempat/hapus/' . $data->id_penduduk) ?>" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin ingin menghapus?');">
                                     <i class="fa fa-trash"></i> Hapus
                                 </a>
                             </div>

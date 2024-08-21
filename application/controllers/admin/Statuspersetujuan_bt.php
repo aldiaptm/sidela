@@ -18,7 +18,7 @@ class Statuspersetujuan_bt extends CI_Controller
         $this->Databerpindahtempat_model->updateStatusPersetujuan($id_detail_pindah, $status_persetujuan);
 
         // Redirect kembali ke halaman admin setelah selesai
-        redirect('admin/daftarbt');
+        redirect('admin/mutasibt');
     }
 
     public function tolak($id_detail_pindah)
@@ -33,4 +33,3 @@ class Statuspersetujuan_bt extends CI_Controller
         redirect('admin/daftarbt');
     }
 }
-?>

@@ -44,7 +44,7 @@
                     <th>Alamat Asli</th>
                     <th>Alamat Tujuan</th>
                     <th>Keterangan Pindah</th>
-                    <th>Aksi</th>
+                    <!-- <th>Aksi</th> -->
                 </tr>
             </thead>
             <tbody>
@@ -69,14 +69,14 @@
                         <td>
                             <?php echo $data->alasan_pindah; ?>
                         </td>
-                        <td>
+                        <!-- <td>
                             <div class="btn-group">
                                 <a href="<?= base_url('kades/hapusberpindahtempat/hapus/' . $data->id_penduduk) ?>" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin ingin menghapus?');">
                                     <i class="fa fa-trash"></i> Hapus
                                 </a>
 
                             </div>
-                        </td>
+                        </td> -->
                     </tr>
                 <?php endforeach; ?>
                 <!-- Tambahkan baris lain sesuai kebutuhan -->

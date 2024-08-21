@@ -25,6 +25,6 @@ class Statuspersetujuan_md extends CI_Controller
         $this->Datameninggal_model->updateStatusPersetujuan($id_penduduk, 'Tidak Disetujui');
 
         // Redirect kembali ke halaman daftar mutasi setelah perubahan status
-        redirect('admin/mutasimd');
+        redirect('admin/daftarmd');
     }
 }

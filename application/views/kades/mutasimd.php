@@ -44,7 +44,7 @@
                     <th>Tempat Kelahiran</th>
                     <th>Tanggal Kelahiran</th>
                     <th>Keterangan</th>
-                    <th>Aksi</th>
+                    <!-- <th>Aksi</th> -->
                 </tr>
             </thead>
             <tbody>
@@ -58,13 +58,13 @@
                         <td><?= $data->tempat_kelahiran; ?></td>
                         <td><?= $data->tanggal_kelahiran; ?></td>
                         <td><?= $data->keterangan; ?></td>
-                        <td>
+                        <!-- <td>
                             <div class="btn-group">
                                 <a href="<?= base_url('kades/hapusmd/hapus/' . $data->id_penduduk) ?>" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin ingin hapus?');">
                                     <i class="fa fa-trash"></i> Hapus
                                 </a>
                             </div>
-                        </td>
+                        </td> -->
                     </tr>
                 <?php endforeach; ?>
                 <!-- Tambahkan baris lain sesuai kebutuhan -->
