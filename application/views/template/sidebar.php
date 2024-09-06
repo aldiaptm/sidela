@@ -100,7 +100,7 @@
                         <img src="<?= base_url('assets/template/') ?>dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block" style="color: #fff;">Admin</a>
+                        <a href="<?= base_url('admin/dashboard') ?>" class="d-block" style="color: #fff;">Admin</a>
                     </div>
                 </div>
                 <!-- Sidebar Menu -->
