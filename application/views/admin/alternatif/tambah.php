@@ -17,7 +17,7 @@
                                 <?= $this->session->userdata('pesan') ?>
                                 <?= form_open_multipart('admin/alternatif/tambah') ?>
                                 <div class="form-group">
-                                    <label>Kode Alternatif</label>
+                                    <label>NIK</label>
                                     <input type="text" name="kode_alternatif" class="form-control" value="<?= set_value('kode_alternatif') ?>">
                                     <small class="form-text text-danger"><?= form_error('kode_alternatif') ?></small>
                                 </div>

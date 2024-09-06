@@ -66,7 +66,7 @@ class Alternatif extends CI_Controller
             }
 
             $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data berhasil disimpan</div>');
-            redirect('admin/alternatif/tambah');
+            redirect('admin/alternatif');
         } else {
             $data['title'] = 'INPUT DATA ALTERNATIF';
             $this->load->view('template/header', $data);
@@ -127,7 +127,7 @@ class Alternatif extends CI_Controller
                 }
 
                 $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data berhasil disimpan</div>');
-                redirect('admin/alternatif/ubah/' . $id_alternatif);
+                redirect('admin/alternatif');
             } else {
                 $data['title'] = 'UBAH DATA ALTERNATIF';
                 $this->load->view('template/header', $data);

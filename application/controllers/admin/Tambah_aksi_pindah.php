@@ -20,10 +20,10 @@ class Tambah_aksi_pindah extends CI_Controller
             redirect('admin/tambahbt');
         } else {
             // Ambil nama dari input form
-            $nama = $this->input->post('nama');
+            $nik = $this->input->post('nik');
 
             // Cari id_penduduk berdasarkan nama
-            $id_penduduk = $this->databerpindahtempat_model->get_id_penduduk_by_name($nama);
+            $id_penduduk = $this->databerpindahtempat_model->get_id_penduduk_by_nik($nik);
 
             if ($id_penduduk) {
                 // Siapkan data untuk disimpan ke dalam tabel detail_meninggal
@@ -47,7 +47,7 @@ class Tambah_aksi_pindah extends CI_Controller
                 }
             } else {
                 // Jika id_penduduk tidak ditemukan berdasarkan nama
-                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Nama tidak ditemukan di database</div>');
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">NIK Bukan Penduduk Desa Galanggang</div>');
             }
 
             // Redirect ke halaman admin/mutasimd setelah selesai
@@ -58,6 +58,7 @@ class Tambah_aksi_pindah extends CI_Controller
     private function _rules()
     {
         // Atur aturan validasi form
+        $this->form_validation->set_rules('nik', 'NIK', 'required');
         $this->form_validation->set_rules('nama', 'Nama', 'required');
         $this->form_validation->set_rules('tanggal_pindah', 'Tanggal Pindah', 'required');
         $this->form_validation->set_rules('alamat_asal', 'Alamat Asal', 'required'); // Pastikan nama field sesuai

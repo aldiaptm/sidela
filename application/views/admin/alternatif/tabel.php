@@ -19,7 +19,7 @@
                                         <thead>
                                             <tr>
                                                 <!-- <th>No</th> -->
-                                                <th>Kode Alternatif</th>
+                                                <th>NIK</th>
                                                 <th>Nama Anggota</th>
                                                 <th width="25%">Aksi</th>
                                             </tr>

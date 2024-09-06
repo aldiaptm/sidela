@@ -16,7 +16,7 @@
                                 <div class="table-responsive mt-3">
                                     <table class="table table-bordered">
                                         <tr>
-                                            <td width="25%">Kode Alternatif</td>
+                                            <td width="25%">NIK</td>
                                             <td><?= $alternatif->kode_alternatif ?></td>
                                         </tr>
                                         <tr>

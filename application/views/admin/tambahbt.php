@@ -12,12 +12,16 @@
     <form action="<?= base_url('admin/tambah_aksi_pindah') ?>" method="POST">
         <div class="card-body">
             <div class="form-group">
+                <label for="nik"> NIK</label>
+                <input type="text" class="form-control" id="nik" placeholder="Masukan NIK" name="nik">
+            </div>
+            <div class="form-group">
                 <label for="nama"> Nama Lengkap</label>
                 <input type="text" class="form-control" id="nama" placeholder="Masukan nama" name="nama">
             </div>
             <div class="form-group">
                 <label for="tanggal_pindah">Tanggal Pindah</label>
-                <input type="date" class="form-control" id="tanggal_pindah placeholder="Masukan tanggal pindah"
+                <input type="date" class="form-control" id="tanggal_pindah placeholder=" Masukan tanggal pindah"
                     name="tanggal_pindah">
             </div>
             <div class="form-group">
@@ -49,4 +53,3 @@
         </div>
     </form>
 </div>
-

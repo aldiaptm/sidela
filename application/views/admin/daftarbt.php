@@ -44,6 +44,7 @@ if (!$this->session->userdata('admin_data')) {
             <thead>
                 <tr style="text-align: center;">
                     <th>No</th>
+                    <th>NIK</th>
                     <th>Nama Penduduk</th>
                     <th>Tanggal Pindah</th>
                     <th>Alamat Asli</th>
@@ -60,6 +61,9 @@ if (!$this->session->userdata('admin_data')) {
                     <tr>
                         <td>
                             <?php echo $no++; ?>
+                        </td>
+                        <td>
+                            <?php echo $data->nik; ?>
                         </td>
                         <td>
                             <?php echo $data->nama_penduduk; ?>
