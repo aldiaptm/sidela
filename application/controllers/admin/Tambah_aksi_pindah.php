@@ -59,9 +59,9 @@ class Tambah_aksi_pindah extends CI_Controller
     {
         // Atur aturan validasi form
         $this->form_validation->set_rules('nik', 'NIK', 'required');
-        $this->form_validation->set_rules('nama', 'Nama', 'required');
+        // $this->form_validation->set_rules('nama', 'Nama', 'required');
         $this->form_validation->set_rules('tanggal_pindah', 'Tanggal Pindah', 'required');
-        $this->form_validation->set_rules('alamat_asal', 'Alamat Asal', 'required'); // Pastikan nama field sesuai
+        $this->form_validation->set_rules('alamat_asal', 'Alamat Asal', 'required');
         $this->form_validation->set_rules('alamat_tujuan', 'Alamat Tujuan', 'required');
         $this->form_validation->set_rules('alasan_pindah', 'Alasan Pindah', 'required');
     }

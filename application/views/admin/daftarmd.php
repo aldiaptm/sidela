@@ -26,6 +26,7 @@ if (!$this->session->userdata('admin_data')) {
             <thead>
                 <tr style="text-align: center;">
                     <th>No</th>
+                    <th>NIK</th>
                     <th>Nama Penduduk</th>
                     <th>Tanggal Kematian</th>
                     <th>Tempat Kematian</th>
@@ -42,6 +43,7 @@ if (!$this->session->userdata('admin_data')) {
                 foreach ($detail_meninggal as $data): ?>
                     <tr>
                         <td><?= $no++; ?></td>
+                        <td><?= $data->nik; ?></td>
                         <td><?= $data->nama_penduduk; ?></td>
                         <td><?= $data->tanggal_kematian; ?></td>
                         <td><?= $data->tempat_kematian; ?></td>

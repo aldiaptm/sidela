@@ -12,7 +12,7 @@ class Datameninggal_model extends CI_Model
     // Fungsi untuk mengambil semua data dari tabel detail_meninggal
     public function get_all_detail_meninggal()
     {
-        $this->db->select('dm.*, p.nama as nama_penduduk');
+        $this->db->select('dm.*, p.nama as nama_penduduk, p.nik');
         $this->db->from('detail_meninggal dm');
         $this->db->join('penduduk p', 'dm.id_penduduk = p.id_penduduk', 'left');
         $query = $this->db->get();
@@ -81,10 +81,10 @@ class Datameninggal_model extends CI_Model
     }
 
     // Fungsi untuk mencari id_penduduk berdasarkan nama
-    public function get_id_penduduk_by_name($nama)
+    public function get_id_penduduk_by_nik($nik)
     {
         $this->db->select('id_penduduk');
-        $this->db->where('nama', $nama);
+        $this->db->where('nik', $nik);
         $query = $this->db->get('penduduk');
 
         if ($query->num_rows() > 0) {
@@ -120,13 +120,9 @@ class Datameninggal_model extends CI_Model
     {
         // Memilih data berdasarkan status persetujuan
         $this->db->where('dm.status_persetujuan', $status_persetujuan);
-        $this->db->select('dm.*, p.nama as nama_penduduk'); // Memilih semua kolom dari detail_meninggal dan nama dari tabel penduduk
+        $this->db->select('dm.*, p.nama as nama_penduduk, p.nik'); // Memilih semua kolom dari detail_meninggal dan nama dari tabel penduduk
         $this->db->from('detail_meninggal dm');
         $this->db->join('penduduk p', 'dm.id_penduduk = p.id_penduduk'); // Melakukan join dengan tabel penduduk berdasarkan id_penduduk
         return $this->db->get()->result();
     }
-
-
-
 }
-?>
