@@ -55,12 +55,11 @@
 
         .footer {
             background-color: rgb(170 152 50 / 87%);
-            padding: 20px;
+            /* padding: 20px; */
         }
 
         .footer .container {
             display: flex;
-            flex-direction: column;
             align-items: center;
             text-align: center;
         }
@@ -88,7 +87,44 @@
 
             .sidenav {
                 width: 250px;
+                background-color: rgb(147 123 0 / 85%);
             }
+
+            .sidenav .list {
+                color: aliceblue;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(147 123 0 / 50%);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 4px;
+        }
+
+        .dropdown-content li {
+            list-style: none;
+        }
+
+        .dropdown-content li a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .dropdown-content li a:hover {
+            background-color: rgb(147 123 0 / 85%);
+        }
+
+        /* Show dropdown on hover */
+        .nav-wrapper>ul>li:hover .dropdown-content {
+            display: block;
         }
     </style>
 </head>
@@ -109,13 +145,15 @@
                         <li><a class="list" href="<?= base_url('home/tentangdesa') ?>">Tentang Desa</a></li>
                         <li><a class="list" href="<?= base_url('home/potensidesa') ?>">Potensi Desa</a></li>
                         <li><a class="list" href="<?= base_url('home/keluhan') ?>">Keluhan</a></li>
-                        <li><a class="list" href="#">Login</a>
-                            <ul class="dropdown">
+                        <li>
+                            <a class="dropdown-trigger list" href="#" data-target="dropdown1">Login</a>
+                            <ul id="dropdown1" class="dropdown-content">
                                 <li><a class="list" href="<?= base_url('kades/login') ?>">Kades</a></li>
                                 <li><a class="list" href="<?= base_url('admin/login') ?>">Admin</a></li>
                                 <li><a class="list" href="<?= base_url('user/login') ?>">User&nbsp;</a></li>
                             </ul>
                         </li>
+
                     </ul>
                 </div>
             </div>
@@ -124,17 +162,15 @@
 
     <!-- Side Navigation for Mobile -->
     <ul id="mobile-nav" class="sidenav">
+        <h6 style="color: white; margin-left: 15px;">Menu</h6>
         <li><a class="list" href="">Beranda</a></li>
-        <li><a class="list" href="#about">Tentang Desa</a></li>
-        <li><a class="list" href="#potensi">Potensi Desa</a></li>
-        <li><a class="list" href="#keluhan">Keluhan</a></li>
-        <li><a class="list" href="#">Login</a>
-            <ul class="dropdown">
-                <li><a class="list" href="<?= base_url('kades/login') ?>">Kades</a></li>
-                <li><a class="list" href="<?= base_url('admin/login') ?>">Admin</a></li>
-                <li><a class="list" href="<?= base_url('user/login') ?>">User&nbsp;</a></li>
-            </ul>
-        </li>
+        <li><a class="list" href="<?= base_url('home/tentangdesa') ?>">Tentang Desa</a></li>
+        <li><a class="list" href="<?= base_url('home/potensidesa') ?>">Potensi Desa</a></li>
+        <li><a class="list" href="<?= base_url('home/keluhan') ?>">Keluhan</a></li><br>
+        <h6 style="color: white; margin-left: 15px;">Login Sebagai</h6>
+        <li><a class="list" href="<?= base_url('kades/login') ?>">Kades</a></li>
+        <li><a class="list" href="<?= base_url('admin/login') ?>">Admin</a></li>
+        <li><a class="list" href="<?= base_url('user/login') ?>">User&nbsp;</a></li>
     </ul>
 
     <!-- SLIDER -->
@@ -158,44 +194,6 @@
         <p class="pelayanan">Anda dapat mengakses pelayanan dengan melakukan login terlebih dahulu <br> Klik menu 'Login' di pojok kanan atas, lalu pilih user</p>
     </div>
 
-    <!-- Content About Us -->
-    <section id="about" class="about scrollspy" style="padding-top: 20px;">
-        <div class="container">
-            <div class="row">
-                <h3 class="center">TENTANG DESA GALANGGANG</h3>
-                <hr><br>
-                <div class="col m4">
-                    <img src="<?php echo base_url('assets/slider/14.jpg') ?>" alt="" style="width: 270px; item-align: center">
-                </div>
-                <div class="col m8">
-                    <h5>Visi</h5>
-                    <p>Kebersamaan Dalam Membangun Demi Masa Depan Galanggang Yang Lebih Maju<br></p>
-                    <h5>Misi</h5>
-                    <ol>
-                        <li>Bersama masyarakat memperkuat kelembagaan desa yang ada sehingga dapat melayani masyarakat secara optimal.</li>
-                        <li>Bersama masyarakat memperkuat kelembagaan desa menyelenggarakan pemerintahan dan melaksanakan pembangunan yang partisipatif.</li>
-                        <li>Bersama masyarakat dan kelembagaan desa dalam mewujudkan Desa Galanggang yang aman, tentram, dan damai.</li>
-                        <li>Bersama masyarakat memperkuat kelembagaan desa memberdayakan masyarakat untuk meningkatkan kesejahteraan masyarakat.</li>
-                        <li>Melakukan evaluasi kinerja pemerintah desa dan evaluasi, refleksi program untuk mencapai tujuan pembangunan desa.</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="about" class="about scrollspy" style="padding-top: 20px;">
-        <div class="container">
-            <div class="row">
-                <h3 class="center">STRUKTUR ORGANISASI DESA GALANGGANG</h3>
-                <hr><br>
-                <div class="col m4">
-                    <div style="text-align: center">
-                        <img src="<?php echo base_url('assets/slider/16.png') ?>" alt="" style="width: 800px">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- SLIDER -->
     <div class="news">
         <div class="slider" style="margin-top: 200px;">
@@ -218,79 +216,6 @@
             <p class="pelayanan">Anda dapat mengakses pelayanan dengan melakukan login terlebih dahulu <br> Klik menu 'Login' di pojok kanan atas, lalu pilih user</p>
         </div>
     </div>
-
-    <section id="potensi" class="potensi scrollspy" style="padding-top: 20px">
-        <div class="container">
-            <div class="row">
-                <h3 class="center">POTENSI DESA GALANGGANG</h3>
-                <hr><br>
-                <div class="col m6 center">
-                    <img src="<?php echo base_url('assets/slider/17.jpg') ?>" alt="" style="width: 270px; item-align: center">
-                </div>
-                <div class="col m6 center">
-                    <h5>Kebun Demplot</h5>
-                    <p>Kebun Demplot merupakan salah satu bentuk potensi Desa Galanggang. Sebagai contoh yang terdapat pada gambar di samping, kebun demplot tersebut merupakan milik Kelompok Tani Cipta Mandiri 5 yang terletak di Hegarmanah RW 05 Desa Galanggang, Kecamatan Batujajar, Kabupaten Bandung Barat, Jawa Barat 40561</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col m4">
-                    <img src="<?php echo base_url('assets/slider/18.jpg') ?>" alt="" style="width: 270px; item-align: center">
-                    <img src="<?php echo base_url('assets/slider/21.jpg') ?>" alt="" style="width: 270px; item-align: center">
-                </div>
-                <div class="col m4">
-                    <img src="<?php echo base_url('assets/slider/19.jpg') ?>" alt="" style="width: 270px; item-align: center">
-                    <img src="<?php echo base_url('assets/slider/22.jpg') ?>" alt="" style="width: 270px; item-align: center">
-                </div>
-                <div class="col m4">
-                    <img src="<?php echo base_url('assets/slider/20.jpg') ?>" alt="" style="width: 270px; item-align: center">
-                    <img src="<?php echo base_url('assets/slider/23.jpg') ?>" alt="" style="width: 270px; item-align: center">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="keluhan" class="keluhan scrollspy" style="padding-top: 20px">
-        <div class="container">
-            <div class="row">
-                <h3 class="center">SAMPAIKAN KELUHAN ANDA</h3>
-                <hr>
-                <p class="center">Isi formulir di bawah, lalu tekan kirim untuk menyampaikan keluhan anda.</p>
-                <div class="col m5 s12">
-                    <div class="card-panel brown darken-3 center white-text">
-                        <i class="material-icons medium">mail</i>
-                        <h4>Kritik & Saran</h4>
-                    </div>
-                </div>
-                <div class="col m7 s12">
-                    <form action="<?= base_url('admin/tambah_keluhan') ?>" method="POST">
-                        <?php echo validation_errors(); ?>
-                        <div class="card-panel">
-                            <div class="input-field">
-                                <input type="text" name="nama_pengisi" id="nama_pengisi">
-                                <label for="nama_pengisi">Nama :</label>
-                            </div>
-                            <div class="input-field">
-                                <input type="text" name="alamat_pengisi" id="alamat_pengisi">
-                                <label for="alamat_pengisi">Alamat :</label>
-                            </div>
-                            <div class="input-field">
-                                <input type="text" name="telpon_pengisi" id="telpon_pengisi">
-                                <label for="telpon_pengisi">Telepon :</label>
-                            </div>
-                            <div class="input-field">
-                                <textarea class="materialize-textarea" name="pesan" id="pesan"></textarea>
-                                <label for="pesan">Pesan :</label>
-                            </div>
-                            <button type="submit" class="btn btn-keluhan" value="Kirim">
-                                <strong>Kirim</strong>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section>
         <div class="footer">
             <div class="container">
@@ -300,9 +225,9 @@
                 </div>
                 <div class="col-4">
                     <h6><a class="list" href="" style="color: black">Beranda</a></h6>
-                    <h6><a class="list" href="#about" style="color: black">Tentang Desa</a></h6>
-                    <h6><a class="list" href="#potensi" style="color: black">Potensi Desa</a></h6>
-                    <h6><a class="list" href="#keluhan" style="color: black">Keluhan</a></h6>
+                    <h6><a class="list" href="<?= base_url('home/tentangdesa') ?>" style="color: black">Tentang Desa</a></h6>
+                    <h6><a class="list" href="<?= base_url('home/potensidesa') ?>" style="color: black">Potensi Desa</a></h6>
+                    <h6><a class="list" href="<?= base_url('home/keluhan') ?>" style="color: black">Keluhan</a></h6>
                 </div>
                 <div class="col-4">
                     Untuk melakukan pelayanan seperti pengajuan mutasi penduduk, anda dapat melakukan login terlebih dahulu pada menu 'Login' yang ada di pojok kanan atas. Loginlah sebagai User (Masyarakat), registrasi terlebih dahulu jika belum mempunyai akun. Selamat beraktivitas!
@@ -319,6 +244,15 @@
 
     <!-- slider -->
     <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Dropdown
+            const dropdowns = document.querySelectorAll('.dropdown-trigger');
+            M.Dropdown.init(dropdowns, {
+                alignment: 'right',
+                coverTrigger: false
+            });
+        });
+
         const slider = document.querySelectorAll('.slider');
         M.Slider.init(slider, {
             duration: 400,
@@ -336,7 +270,15 @@
         // Initialize Sidenav for mobile
         const sidenav = document.querySelectorAll('.sidenav');
         M.Sidenav.init(sidenav);
+
+        // Initialize Dropdown
+        const dropdowns = document.querySelectorAll('.dropdown-trigger');
+        M.Dropdown.init(dropdowns, {
+            alignment: 'right', // Atur alignment sesuai kebutuhan
+            coverTrigger: false // Atur jika dropdown harus menutup saat klik di luar
+        });
     </script>
+
 </body>
 
 </html>

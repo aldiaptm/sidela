@@ -22,14 +22,7 @@
         }
 
         .slider {
-            height: 550px !important;
-            background-color: lightgoldenrodyellow;
-        }
-
-        .slider .slides li img {
-            height: 100% !important;
-            width: 100%;
-            object-fit: cover;
+            height: 200px !important;
         }
 
         .about {
@@ -55,12 +48,11 @@
 
         .footer {
             background-color: rgb(170 152 50 / 87%);
-            padding: 20px;
+            /* padding: 20px; */
         }
 
         .footer .container {
             display: flex;
-            flex-direction: column;
             align-items: center;
             text-align: center;
         }
@@ -88,7 +80,89 @@
 
             .sidenav {
                 width: 250px;
+                background-color: rgb(147 123 0 / 85%);
             }
+
+            .sidenav .list {
+                color: aliceblue;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(147 123 0 / 50%);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 4px;
+        }
+
+        .dropdown-content li {
+            list-style: none;
+        }
+
+        .dropdown-content li a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .dropdown-content li a:hover {
+            background-color: rgb(147 123 0 / 85%);
+        }
+
+        /* Show dropdown on hover */
+        .nav-wrapper>ul>li:hover .dropdown-content {
+            display: block;
+        }
+
+        .carousel {
+            position: relative;
+            /* Untuk memposisikan indikator dengan benar */
+        }
+
+        .carousel .carousel-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 200px;
+            color: black;
+            font-weight: bold;
+            /* Sesuaikan tinggi sesuai kebutuhan */
+        }
+
+        .carousel .carousel-item img {
+            width: 100%;
+            height: auto;
+            max-height: 200px;
+            /* Sesuaikan tinggi gambar */
+            object-fit: cover;
+        }
+
+        .carousel .carousel-indicators {
+            position: absolute;
+            bottom: 10px;
+            /* Jarak dari bagian bawah carousel */
+            width: 100%;
+            text-align: center;
+        }
+
+        .carousel .carousel-indicators .indicator-item {
+            background-color: #fff;
+            /* Warna indikator */
+            opacity: 0.7;
+            /* Transparansi indikator */
+        }
+
+        .carousel .carousel-indicators .indicator-item.active {
+            background-color: #000;
+            /* Warna indikator aktif */
         }
     </style>
 </head>
@@ -109,13 +183,15 @@
                         <li><a class="list" href="">Tentang Desa</a></li>
                         <li><a class="list" href="<?= base_url('home/potensidesa') ?>">Potensi Desa</a></li>
                         <li><a class="list" href="<?= base_url('home/keluhan') ?>">Keluhan</a></li>
-                        <li><a class="list" href="#">Login</a>
-                            <ul class="dropdown">
+                        <li>
+                            <a class="dropdown-trigger list" href="#" data-target="dropdown1">Login</a>
+                            <ul id="dropdown1" class="dropdown-content">
                                 <li><a class="list" href="<?= base_url('kades/login') ?>">Kades</a></li>
                                 <li><a class="list" href="<?= base_url('admin/login') ?>">Admin</a></li>
                                 <li><a class="list" href="<?= base_url('user/login') ?>">User&nbsp;</a></li>
                             </ul>
                         </li>
+
                     </ul>
                 </div>
             </div>
@@ -124,19 +200,16 @@
 
     <!-- Side Navigation for Mobile -->
     <ul id="mobile-nav" class="sidenav">
-        <li><a class="list" href="">Beranda</a></li>
-        <li><a class="list" href="#about">Tentang Desa</a></li>
-        <li><a class="list" href="#potensi">Potensi Desa</a></li>
-        <li><a class="list" href="#keluhan">Keluhan</a></li>
-        <li><a class="list" href="#">Login</a>
-            <ul class="dropdown">
-                <li><a class="list" href="<?= base_url('kades/login') ?>">Kades</a></li>
-                <li><a class="list" href="<?= base_url('admin/login') ?>">Admin</a></li>
-                <li><a class="list" href="<?= base_url('user/login') ?>">User&nbsp;</a></li>
-            </ul>
-        </li>
+        <h6 style="color: white; margin-left: 15px;">Menu</h6>
+        <li><a class="list" href="<?= base_url('page') ?>">Beranda</a></li>
+        <li><a class="list" href="">Tentang Desa</a></li>
+        <li><a class="list" href="<?= base_url('home/potensidesa') ?>">Potensi Desa</a></li>
+        <li><a class="list" href="<?= base_url('home/keluhan') ?>">Keluhan</a></li><br>
+        <h6 style="color: white; margin-left: 15px;">Login Sebagai</h6>
+        <li><a class="list" href="<?= base_url('kades/login') ?>">Kades</a></li>
+        <li><a class="list" href="<?= base_url('admin/login') ?>">Admin</a></li>
+        <li><a class="list" href="<?= base_url('user/login') ?>">User&nbsp;</a></li>
     </ul>
-
     <section id="about" class="about scrollspy" style="padding-top: 20px;">
         <div class="container">
             <div class="row">
@@ -160,19 +233,33 @@
             </div>
         </div>
     </section>
-    <section id="about" class="about scrollspy" style="padding-top: 20px;">
+    <section id="struktur" class="struktur" style="padding-top: 20px;">
         <div class="container">
             <div class="row">
                 <h3 class="center">STRUKTUR ORGANISASI DESA GALANGGANG</h3>
-                <hr><br>
-                <div class="col m4">
-                    <div style="text-align: center">
-                        <img src="<?php echo base_url('assets/slider/16.png') ?>" alt="" style="width: 800px">
-                    </div>
+                <hr><br>=
+                <div style="text-align: center">
+                    <img src="<?php echo base_url('assets/slider/16.png') ?>" alt="" style="width: 80%">
                 </div>
             </div>
         </div>
     </section>
+    <section>
+        <div class="container">
+            <div class="carousel">
+                <a class="carousel-item"><img src="<?php echo base_url('assets/slider/profil.jpg') ?>" alt="Kepala Kanjut"><br>KEPALA DESA <br>H. Muhamad Hidayat</a>
+                <a class="carousel-item"><img src="<?php echo base_url('assets/slider/profil.jpg') ?>" alt="Kepala Kanjut"><br>SEKRETARIS DESA <br>Abdul Wahab Firmansyah</a>
+                <a class="carousel-item"><img src="<?php echo base_url('assets/slider/profil.jpg') ?>" alt="Kepala Kanjut"><br>KASI PEMERINTAHAN <br>Erdi Ermawan Zaenudin</a>
+                <a class="carousel-item"><img src="<?php echo base_url('assets/slider/profil.jpg') ?>" alt="Kepala Kanjut"><br>KASI KESEJAHTERAAN <br>Priyana Armedika</a>
+                <a class="carousel-item"><img src="<?php echo base_url('assets/slider/profil.jpg') ?>" alt="Kepala Kanjut"><br>KASI PELAYANAN <br>Muhamad Iqbal Syahid</a>
+                <a class="carousel-item"><img src="<?php echo base_url('assets/slider/profil.jpg') ?>" alt="Kepala Kanjut"><br>KAUR TATA USAHA & UMUM <br>Beni Nur Hartanto</a>
+                <a class="carousel-item"><img src="<?php echo base_url('assets/slider/profil.jpg') ?>" alt="Kepala Kanjut"><br>KAUR KEUANGAN <br>Reskanita Maulida</a>
+                <a class="carousel-item"><img src="<?php echo base_url('assets/slider/profil.jpg') ?>" alt="Kepala Kanjut"><br>KAUR PERENCANAAN <br>Neng Ai Nurazizah</a>
+            </div>
+        </div>
+    </section>
+
+
     <section>
         <div class="footer">
             <div class="container">
@@ -201,6 +288,15 @@
 
     <!-- slider -->
     <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Dropdown
+            const dropdowns = document.querySelectorAll('.dropdown-trigger');
+            M.Dropdown.init(dropdowns, {
+                alignment: 'right',
+                coverTrigger: false
+            });
+        });
+
         const slider = document.querySelectorAll('.slider');
         M.Slider.init(slider, {
             duration: 400,
@@ -219,6 +315,21 @@
         const sidenav = document.querySelectorAll('.sidenav');
         M.Sidenav.init(sidenav);
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.carousel');
+            M.Carousel.init(elems, {
+                duration: 100, // Durasi perpindahan menjadi 2 detik
+                dist: -30,
+                shift: 7,
+                padding: 0,
+                numVisible: 7,
+                indicators: true, // Memastikan indikator ditampilkan
+                noWrap: false
+            });
+        });
+    </script>
+
 </body>
 
 </html>

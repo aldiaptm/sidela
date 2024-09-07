@@ -55,12 +55,11 @@
 
         .footer {
             background-color: rgb(170 152 50 / 87%);
-            padding: 20px;
+            /* padding: 20px; */
         }
 
         .footer .container {
             display: flex;
-            flex-direction: column;
             align-items: center;
             text-align: center;
         }
@@ -88,7 +87,42 @@
 
             .sidenav {
                 width: 250px;
+                background-color: rgb(147 123 0 / 85%);
             }
+
+            .sidenav .list {
+                color: aliceblue;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: rgb(147 123 0 / 50%);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown li {
+            list-style: none;
+        }
+
+        .dropdown li a {
+            color: white;
+            /* padding: 12px 16px; */
+            text-decoration: none;
+            display: block;
+
+        }
+
+        .dropdown li a:hover {
+            background-color: rgb(147 123 0 / 85%);
+        }
+
+        .nav-wrapper>ul>li:hover .dropdown {
+            display: block;
         }
     </style>
 </head>
@@ -109,8 +143,8 @@
                         <li><a class="list" href="<?= base_url('home/tentangdesa') ?>">Tentang Desa</a></li>
                         <li><a class="list" href="">Potensi Desa</a></li>
                         <li><a class="list" href="<?= base_url('home/keluhan') ?>">Keluhan</a></li>
-                        <li><a class="list" href="#">Login</a>
-                            <ul class="dropdown">
+                        <li><a class="dropdown-trigger list" href="#" data-target="dropdown1">Login</a>
+                            <ul id="dropdown1" class="dropdown">
                                 <li><a class="list" href="<?= base_url('kades/login') ?>">Kades</a></li>
                                 <li><a class="list" href="<?= base_url('admin/login') ?>">Admin</a></li>
                                 <li><a class="list" href="<?= base_url('user/login') ?>">User&nbsp;</a></li>
@@ -124,19 +158,16 @@
 
     <!-- Side Navigation for Mobile -->
     <ul id="mobile-nav" class="sidenav">
-        <li><a class="list" href="">Beranda</a></li>
-        <li><a class="list" href="#about">Tentang Desa</a></li>
-        <li><a class="list" href="#potensi">Potensi Desa</a></li>
-        <li><a class="list" href="#keluhan">Keluhan</a></li>
-        <li><a class="list" href="#">Login</a>
-            <ul class="dropdown">
-                <li><a class="list" href="<?= base_url('kades/login') ?>">Kades</a></li>
-                <li><a class="list" href="<?= base_url('admin/login') ?>">Admin</a></li>
-                <li><a class="list" href="<?= base_url('user/login') ?>">User&nbsp;</a></li>
-            </ul>
-        </li>
+        <h6 style="color: white; margin-left: 15px;">Menu</h6>
+        <li><a class="list" href="<?= base_url('page') ?>">Beranda</a></li>
+        <li><a class="list" href="<?= base_url('home/tentangdesa') ?>">Tentang Desa</a></li>
+        <li><a class="list" href="">Potensi Desa</a></li>
+        <li><a class="list" href="<?= base_url('home/keluhan') ?>">Keluhan</a></li><br>
+        <h6 style="color: white; margin-left: 15px;">Login Sebagai</h6>
+        <li><a class="list" href="<?= base_url('kades/login') ?>">Kades</a></li>
+        <li><a class="list" href="<?= base_url('admin/login') ?>">Admin</a></li>
+        <li><a class="list" href="<?= base_url('user/login') ?>">User&nbsp;</a></li>
     </ul>
-
     <section id="potensi" class="potensi scrollspy" style="padding-top: 20px">
         <div class="container">
             <div class="row">
