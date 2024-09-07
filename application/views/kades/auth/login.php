@@ -44,7 +44,7 @@
     <div class="container pt-4">
         <!-- Outer Row -->
         <div class="row justify-content-center">
-            <div class="col-6" style="padding-top: 50px">
+            <div class="col m6 center" style="padding-top: 50px">
                 <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4"><strong>SISTEM INFORMASI DESA <br> GALANGGANG</strong></h1>
                 </div>
@@ -52,7 +52,7 @@
                     <img src="<?= base_url('assets/icon/logokbb.png') ?>" style="width: 350px;">
                 </div>
             </div>
-            <div class="col-lg-6" style="padding-left: 50px; padding-right: 50px">
+            <div class="col m6 center" style="padding-left: 50px; padding-right: 50px">
                 <div class="card o-hidden border-2 shadow-lg my-5">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->

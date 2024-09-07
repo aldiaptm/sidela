@@ -16,6 +16,10 @@
             background-color: rgb(147 123 0 / 85%);
         }
 
+        .brand-logo {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
         .brand-logo img {
             height: 23px;
             margin-right: 10px;
@@ -96,32 +100,35 @@
             }
         }
 
-        .dropdown {
+        /* Dropdown Styling */
+        .dropdown-content {
             display: none;
             position: absolute;
             background-color: rgb(147 123 0 / 50%);
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             z-index: 1;
+            border-radius: 4px;
         }
 
-        .dropdown li {
+        .dropdown-content li {
             list-style: none;
         }
 
-        .dropdown li a {
+        .dropdown-content li a {
             color: white;
-            /* padding: 12px 16px; */
+            padding: 12px 16px;
             text-decoration: none;
             display: block;
-
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .dropdown li a:hover {
+        .dropdown-content li a:hover {
             background-color: rgb(147 123 0 / 85%);
         }
 
-        .nav-wrapper>ul>li:hover .dropdown {
+        /* Show dropdown on hover */
+        .nav-wrapper>ul>li:hover .dropdown-content {
             display: block;
         }
     </style>
@@ -133,7 +140,7 @@
         <nav>
             <div class="container">
                 <div class="nav-wrapper">
-                    <a href="index.php" class="brand-logo">
+                    <a href="<?= base_url('page') ?>" class="brand-logo">
                         <img src="<?= base_url('assets/icon/logokbb.png') ?>" alt="">
                         SIDELA
                     </a>
@@ -143,8 +150,9 @@
                         <li><a class="list" href="<?= base_url('home/tentangdesa') ?>">Tentang Desa</a></li>
                         <li><a class="list" href="">Potensi Desa</a></li>
                         <li><a class="list" href="<?= base_url('home/keluhan') ?>">Keluhan</a></li>
-                        <li><a class="dropdown-trigger list" href="#" data-target="dropdown1">Login</a>
-                            <ul id="dropdown1" class="dropdown">
+                        <li>
+                            <a class="dropdown-trigger list" href="#" data-target="dropdown1">Login</a>
+                            <ul id="dropdown1" class="dropdown-content">
                                 <li><a class="list" href="<?= base_url('kades/login') ?>">Kades</a></li>
                                 <li><a class="list" href="<?= base_url('admin/login') ?>">Admin</a></li>
                                 <li><a class="list" href="<?= base_url('user/login') ?>">User&nbsp;</a></li>
@@ -171,27 +179,34 @@
     <section id="potensi" class="potensi scrollspy" style="padding-top: 20px">
         <div class="container">
             <div class="row">
-                <h3 class="center">POTENSI DESA GALANGGANG</h3>
+                <p class="center" style="font-size: 48px; font-weight: bold; margin-bottom: 0px;">
+                    POTENSI DESA GALANGGANG
+                </p>
                 <hr><br>
                 <div class="col m6 center">
                     <img src="<?php echo base_url('assets/slider/17.jpg') ?>" alt="" style="width: 270px; item-align: center">
                 </div>
                 <div class="col m6 center">
-                    <h5>Kebun Demplot</h5>
+                    <p class="center" style="font-size: 28px; font-weight: bold; margin-bottom: 0px;">
+                        KEBUN DEMPLOT
+                    </p>
                     <p>Kebun Demplot merupakan salah satu bentuk potensi Desa Galanggang. Sebagai contoh yang terdapat pada gambar di samping, kebun demplot tersebut merupakan milik Kelompok Tani Cipta Mandiri 5 yang terletak di Hegarmanah RW 05 Desa Galanggang, Kecamatan Batujajar, Kabupaten Bandung Barat, Jawa Barat 40561</p>
                 </div>
-            </div>
+            </div><br>
+            <p class="center" style="font-size: 32px; font-weight: bold; margin-bottom: 0px;">
+                DOKUMENTASI
+            </p><br>
             <div class="row">
-                <div class="col m4">
-                    <img src="<?php echo base_url('assets/slider/18.jpg') ?>" alt="" style="width: 270px; item-align: center">
+                <div class="col m4 center">
+                    <img src="<?php echo base_url('assets/slider/18.jpg') ?>" alt="" style="width: 270px; item-align: center"><br><br><br>
                     <img src="<?php echo base_url('assets/slider/21.jpg') ?>" alt="" style="width: 270px; item-align: center">
                 </div>
-                <div class="col m4">
-                    <img src="<?php echo base_url('assets/slider/19.jpg') ?>" alt="" style="width: 270px; item-align: center">
+                <div class="col m4 center">
+                    <img src="<?php echo base_url('assets/slider/19.jpg') ?>" alt="" style="width: 270px; item-align: center"><br><br><br>
                     <img src="<?php echo base_url('assets/slider/22.jpg') ?>" alt="" style="width: 270px; item-align: center">
                 </div>
-                <div class="col m4">
-                    <img src="<?php echo base_url('assets/slider/20.jpg') ?>" alt="" style="width: 270px; item-align: center">
+                <div class="col m4 center">
+                    <img src="<?php echo base_url('assets/slider/20.jpg') ?>" alt="" style="width: 270px; item-align: center"><br><br><br>
                     <img src="<?php echo base_url('assets/slider/23.jpg') ?>" alt="" style="width: 270px; item-align: center">
                 </div>
             </div>
@@ -226,6 +241,15 @@
 
     <!-- slider -->
     <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Dropdown
+            const dropdowns = document.querySelectorAll('.dropdown-trigger');
+            M.Dropdown.init(dropdowns, {
+                alignment: 'right',
+                coverTrigger: false
+            });
+        });
+
         const slider = document.querySelectorAll('.slider');
         M.Slider.init(slider, {
             duration: 400,

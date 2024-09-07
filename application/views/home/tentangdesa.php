@@ -16,21 +16,13 @@
             background-color: rgb(147 123 0 / 85%);
         }
 
+        .brand-logo {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
         .brand-logo img {
             height: 23px;
             margin-right: 10px;
-        }
-
-        .slider {
-            height: 200px !important;
-        }
-
-        .about {
-            height: 520px !important;
-        }
-
-        .slides {
-            text-shadow: 3px 2px 1px grey;
         }
 
         .pelayanan {
@@ -173,7 +165,7 @@
         <nav>
             <div class="container">
                 <div class="nav-wrapper">
-                    <a href="index.php" class="brand-logo">
+                    <a href="<?= base_url('page') ?>" class="brand-logo">
                         <img src="<?= base_url('assets/icon/logokbb.png') ?>" alt="">
                         SIDELA
                     </a>
@@ -213,16 +205,22 @@
     <section id="about" class="about scrollspy" style="padding-top: 20px;">
         <div class="container">
             <div class="row">
-                <h3 class="center">TENTANG DESA GALANGGANG</h3>
+                <p class="center" style="font-size: 48px; font-weight: bold; margin-bottom: 0px;">
+                    TENTANG DESA GALANGGANG
+                </p>
                 <hr><br>
-                <div class="col m4">
+                <div class="col m4 center">
                     <img src="<?php echo base_url('assets/slider/14.jpg') ?>" alt="" style="width: 270px; item-align: center">
                 </div>
                 <div class="col m8">
-                    <h5>Visi</h5>
-                    <p>Kebersamaan Dalam Membangun Demi Masa Depan Galanggang Yang Lebih Maju<br></p>
-                    <h5>Misi</h5>
-                    <ol>
+                    <p class="" style="font-size: 28px; font-weight: bold">
+                        VISI
+                    </p>
+                    <p class="misi" style="font-size: 18px; text-align: justify">Kebersamaan Dalam Membangun Demi Masa Depan Galanggang Yang Lebih Maju<br></p>
+                    <p class="" style="font-size: 28px; font-weight: bold">
+                        MISI
+                    </p>
+                    <ol style="font-size: 18px; text-align: justify">
                         <li>Bersama masyarakat memperkuat kelembagaan desa yang ada sehingga dapat melayani masyarakat secara optimal.</li>
                         <li>Bersama masyarakat memperkuat kelembagaan desa menyelenggarakan pemerintahan dan melaksanakan pembangunan yang partisipatif.</li>
                         <li>Bersama masyarakat dan kelembagaan desa dalam mewujudkan Desa Galanggang yang aman, tentram, dan damai.</li>
@@ -236,10 +234,11 @@
     <section id="struktur" class="struktur" style="padding-top: 20px;">
         <div class="container">
             <div class="row">
-                <h3 class="center">STRUKTUR ORGANISASI DESA GALANGGANG</h3>
-                <hr><br>=
+                <p class="center" style="font-size: 32px; font-weight: bold">
+                    STRUKTUR ORGANISASI DESA GALANGGANG
+                </p>
                 <div style="text-align: center">
-                    <img src="<?php echo base_url('assets/slider/16.png') ?>" alt="" style="width: 80%">
+                    <img src="<?php echo base_url('assets/slider/16.png') ?>" alt="" style="width: 70%">
                 </div>
             </div>
         </div>
@@ -247,21 +246,70 @@
     <section>
         <div class="container">
             <div class="carousel">
-                <a class="carousel-item"><img src="<?php echo base_url('assets/slider/profil.jpg') ?>" alt="Kepala Kanjut"><br>KEPALA DESA <br>H. Muhamad Hidayat</a>
-                <a class="carousel-item"><img src="<?php echo base_url('assets/slider/profil.jpg') ?>" alt="Kepala Kanjut"><br>SEKRETARIS DESA <br>Abdul Wahab Firmansyah</a>
-                <a class="carousel-item"><img src="<?php echo base_url('assets/slider/profil.jpg') ?>" alt="Kepala Kanjut"><br>KASI PEMERINTAHAN <br>Erdi Ermawan Zaenudin</a>
-                <a class="carousel-item"><img src="<?php echo base_url('assets/slider/profil.jpg') ?>" alt="Kepala Kanjut"><br>KASI KESEJAHTERAAN <br>Priyana Armedika</a>
-                <a class="carousel-item"><img src="<?php echo base_url('assets/slider/profil.jpg') ?>" alt="Kepala Kanjut"><br>KASI PELAYANAN <br>Muhamad Iqbal Syahid</a>
-                <a class="carousel-item"><img src="<?php echo base_url('assets/slider/profil.jpg') ?>" alt="Kepala Kanjut"><br>KAUR TATA USAHA & UMUM <br>Beni Nur Hartanto</a>
-                <a class="carousel-item"><img src="<?php echo base_url('assets/slider/profil.jpg') ?>" alt="Kepala Kanjut"><br>KAUR KEUANGAN <br>Reskanita Maulida</a>
-                <a class="carousel-item"><img src="<?php echo base_url('assets/slider/profil.jpg') ?>" alt="Kepala Kanjut"><br>KAUR PERENCANAAN <br>Neng Ai Nurazizah</a>
+                <a class="carousel-item"><img src="<?php echo base_url('assets/slider/profil.jpg') ?>" alt=""><br>KEPALA DESA <br>H. Muhamad Hidayat</a>
+                <a class="carousel-item"><img src="<?php echo base_url('assets/slider/profil.jpg') ?>" alt=""><br>SEKRETARIS DESA <br>Abdul Wahab Firmansyah</a>
+                <a class="carousel-item"><img src="<?php echo base_url('assets/slider/profil.jpg') ?>" alt=""><br>KASI PEMERINTAHAN <br>Erdi Ermawan Zaenudin</a>
+                <a class="carousel-item"><img src="<?php echo base_url('assets/slider/profil.jpg') ?>" alt=""><br>KASI KESEJAHTERAAN <br>Priyana Armedika</a>
+                <a class="carousel-item"><img src="<?php echo base_url('assets/slider/profil.jpg') ?>" alt=""><br>KASI PELAYANAN <br>Muhamad Iqbal Syahid</a>
+                <a class="carousel-item"><img src="<?php echo base_url('assets/slider/profil.jpg') ?>" alt=""><br>KAUR TATA USAHA & UMUM <br>Beni Nur Hartanto</a>
+                <a class="carousel-item"><img src="<?php echo base_url('assets/slider/profil.jpg') ?>" alt=""><br>KAUR KEUANGAN <br>Reskanita Maulida</a>
+                <a class="carousel-item"><img src="<?php echo base_url('assets/slider/profil.jpg') ?>" alt=""><br>KAUR PERENCANAAN <br>Neng Ai Nurazizah</a>
             </div>
         </div>
     </section>
 
+    <section class="sejarah">
+        <div class="container ">
+            <p class="judulsejarah center" style="font-size: 28px; font-weight: bold">
+                SEJARAH DESA GALANGGANG
+            </p>
+            <div class="row">
+                <div class="col m6" style="text-align: justify">
+                    <p class="" style="font-size: 18px;">
+                        &emsp; &emsp;Desa Galanggang adalah sebuah desa yang terletak di Kecamatan Batujajar, Kabupaten Bandung Barat. Desa ini telah ada sejak tahun 1886 dan namanya tidak pernah berubah sejak masa penjajahan Belanda hingga Jepang. Meskipun asal-usul nama "Galanggang" tidak diketahui pasti, ada dugaan bahwa nama ini merujuk pada tempat atau arena pertandingan yang besar.
+                    </p>
+                </div>
+                <div class="col m6" style="text-align: justify">
+                    <p class="" style="font-size: 18px;">
+                        &emsp; &emsp;Dahulu, wilayah Desa Galanggang lebih luas dan mencakup wilayah yang sekarang menjadi Desa Pangauban. Secara geografis, Desa Galanggang terletak di dataran rendah dengan suhu rata-rata sekitar 25 derajat Celcius. Iklim di desa ini memiliki dua musim, yaitu musim kemarau dan musim hujan, yang sangat berpengaruh pada kegiatan pertanian.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m6" style="text-align: justify">
+                    <p class="" style="font-size: 18px;">
+                        Tata Guna Tanah Desa Sebagai Berikut (Hektare):
+                    </p>
+                    <ol style="font-size: 18px; text-align: justify">
+                        <li>Luas Pemukiman 41,438</li>
+                        <li>Luas Persawahan 59</li>
+                        <li>Luas Perkebunan 12</li>
+                        <li>Luas Pemakaman 1,5</li>
+                        <li>Luas Pekarangan 31</li>
+                        <li>Luas Perkantoran 22</li>
+                        <li>Luas Prasaranan Umum Lainnya 36,7</li>
+                    </ol>
+                    <p class="" style="font-size: 18px;">
+                        Total luas wilayah Desa Galanggang adalah 203,638 Hektare
+                    </p>
+                </div>
+                <div class="col m6" style="text-align: justify">
+                    <p class="" style="font-size: 18px;">
+                        Dengan batas-batas wilayah administratif sebagai berikut:
+                    </p>
+                    <ol style="font-size: 18px; text-align: justify">
+                        <li>Sebelah Utara berbatasan dengan Desa Cangkorah</li>
+                        <li>Sebelah Timur berbatasan dengan Desa Batujajar Timur</li>
+                        <li>Sebelah Selatan berbatasan dengan Desa Batujajar Timur dan Batujajar Barat</li>
+                        <li>Sebelah Barat berbatasan dengan Desa Pangauban</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section>
-        <div class="footer">
+        <div class=" footer">
             <div class="container">
                 <div class="col-4">
                     <h5>Pelayanan Kami</h5>
@@ -320,7 +368,7 @@
             var elems = document.querySelectorAll('.carousel');
             M.Carousel.init(elems, {
                 duration: 100, // Durasi perpindahan menjadi 2 detik
-                dist: -30,
+                dist: -20,
                 shift: 7,
                 padding: 0,
                 numVisible: 7,

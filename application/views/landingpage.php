@@ -16,6 +16,10 @@
             background-color: rgb(147 123 0 / 85%);
         }
 
+        .brand-logo {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
         .brand-logo img {
             height: 23px;
             margin-right: 10px;
@@ -24,6 +28,7 @@
         .slider {
             height: 550px !important;
             background-color: lightgoldenrodyellow;
+            /* margin-top: 8px; */
         }
 
         .slider .slides li img {
@@ -135,7 +140,7 @@
         <nav>
             <div class="container">
                 <div class="nav-wrapper">
-                    <a href="index.php" class="brand-logo">
+                    <a href="<?= base_url('page') ?>" class="brand-logo">
                         <img src="<?= base_url('assets/icon/logokbb.png') ?>" alt="">
                         SIDELA
                     </a>
@@ -196,7 +201,7 @@
 
     <!-- SLIDER -->
     <div class="news">
-        <div class="slider" style="margin-top: 200px;">
+        <div class="slider" style="margin-top: 10px;">
             <ul class="slides">
                 <li>
                     <img src="<?php echo base_url('assets/slider/bantuan1.jpeg') ?>" alt="">

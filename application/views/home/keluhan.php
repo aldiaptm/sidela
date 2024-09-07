@@ -16,6 +16,10 @@
             background-color: rgb(147 123 0 / 85%);
         }
 
+        .brand-logo {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
         .brand-logo img {
             height: 23px;
             margin-right: 10px;
@@ -94,34 +98,38 @@
                 color: aliceblue;
                 font-family: Arial, Helvetica, sans-serif;
             }
+
         }
 
-        .dropdown {
+        /* Dropdown Styling */
+        .dropdown-content {
             display: none;
             position: absolute;
             background-color: rgb(147 123 0 / 50%);
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             z-index: 1;
+            border-radius: 4px;
         }
 
-        .dropdown li {
+        .dropdown-content li {
             list-style: none;
         }
 
-        .dropdown li a {
+        .dropdown-content li a {
             color: white;
-            /* padding: 12px 16px; */
+            padding: 12px 16px;
             text-decoration: none;
             display: block;
-
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .dropdown li a:hover {
+        .dropdown-content li a:hover {
             background-color: rgb(147 123 0 / 85%);
         }
 
-        .nav-wrapper>ul>li:hover .dropdown {
+        /* Show dropdown on hover */
+        .nav-wrapper>ul>li:hover .dropdown-content {
             display: block;
         }
     </style>
@@ -143,8 +151,9 @@
                         <li><a class="list" href="<?= base_url('home/tentangdesa') ?>">Tentang Desa</a></li>
                         <li><a class="list" href="<?= base_url('home/potensidesa') ?>">Potensi Desa</a></li>
                         <li><a class="list" href="">Keluhan</a></li>
-                        <li><a class="dropdown-trigger list" href="#" data-target="dropdown1">Login</a>
-                            <ul id="dropdown1" class="dropdown">
+                        <li>
+                            <a class="dropdown-trigger list" href="#" data-target="dropdown1">Login</a>
+                            <ul id="dropdown1" class="dropdown-content">
                                 <li><a class="list" href="<?= base_url('kades/login') ?>">Kades</a></li>
                                 <li><a class="list" href="<?= base_url('admin/login') ?>">Admin</a></li>
                                 <li><a class="list" href="<?= base_url('user/login') ?>">User&nbsp;</a></li>
@@ -172,7 +181,9 @@
     <section id="keluhan" class="keluhan scrollspy" style="padding-top: 20px">
         <div class="container">
             <div class="row">
-                <h3 class="center">SAMPAIKAN KELUHAN ANDA</h3>
+                <p class="center" style="font-size: 34px; font-weight: bold; margin-bottom: 0px;">
+                    SAMPAIKAN KELUHAN ANDA
+                </p>
                 <hr>
                 <p class="center">Isi formulir di bawah, lalu tekan kirim untuk menyampaikan keluhan anda.</p>
                 <div class="col m5 s12">
@@ -239,6 +250,15 @@
 
     <!-- slider -->
     <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Dropdown
+            const dropdowns = document.querySelectorAll('.dropdown-trigger');
+            M.Dropdown.init(dropdowns, {
+                alignment: 'right',
+                coverTrigger: false
+            });
+        });
+
         const slider = document.querySelectorAll('.slider');
         M.Slider.init(slider, {
             duration: 400,
