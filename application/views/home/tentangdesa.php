@@ -305,6 +305,33 @@
                     </ol>
                 </div>
             </div>
+            <p class="judulsejarah center" style="font-size: 28px; font-weight: bold">
+                PENDUDUK DESA GALANGGANG
+            </p>
+            <div class="row">
+                <div class="col m6" style="text-align: justify">
+                    <p class="center" style="font-size: 18px;">
+                        Desa Galanggang memiliki penduduk sebanyak 19.425 orang, yang terdiri dari:
+                    </p>
+                    <ol type="A" style="font-size: 18px; text-align: justify">
+                        <li>9.538 Laki-laki</li>
+                        <li>9.887 Perempuan</li>
+                        <li>6.109 Kartu Keluarga</li>
+                    </ol>
+                </div>
+                <div class="col m6" style="text-align: justify">
+                    <p class="center" style="font-size: 18px;">
+                        Distribusi penduduk berdasarkan usia:
+                    </p>
+                    <ol type="A" style="font-size: 18px; text-align: justify">
+                        <li>0-5 tahun sebanyak 822 orang</li>
+                        <li>6-11 tahun sebanyak 1.889 orang</li>
+                        <li>12-16 tahun sebanyak 4.842 orang</li>
+                        <li>17-60 tahun sebanyak 10.733 orang</li>
+                        <li>Lebih dari 60 tahun sebanyak 1.139 orang</li>
+                    </ol>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -316,10 +343,10 @@
                     <img style="width: 180px; padding: 20px;" src="<?= base_url('assets/icon/logokbb.png') ?>" alt="">
                 </div>
                 <div class="col-4">
-                    <h6><a class="list" href="" style="color: black">Beranda</a></h6>
-                    <h6><a class="list" href="#about" style="color: black">Tentang Desa</a></h6>
-                    <h6><a class="list" href="#potensi" style="color: black">Potensi Desa</a></h6>
-                    <h6><a class="list" href="#keluhan" style="color: black">Keluhan</a></h6>
+                    <h6><a class="list" href="<?= base_url('page') ?>" style="color: black">Beranda</a></h6>
+                    <h6><a class="list" href="" style="color: black">Tentang Desa</a></h6>
+                    <h6><a class="list" href="<?= base_url('home/potensidesa') ?>" style="color: black">Potensi Desa</a></h6>
+                    <h6><a class="list" href="<?= base_url('home/keluhan') ?>" style="color: black">Keluhan</a></h6>
                 </div>
                 <div class="col-4">
                     Untuk melakukan pelayanan seperti pengajuan mutasi penduduk, anda dapat melakukan login terlebih dahulu pada menu 'Login' yang ada di pojok kanan atas. Loginlah sebagai User (Masyarakat), registrasi terlebih dahulu jika belum mempunyai akun. Selamat beraktivitas!

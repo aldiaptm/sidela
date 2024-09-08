@@ -17,7 +17,8 @@
 
 <div class="card">
     <div class="card-header">
-        <h1 class="card-title" style="font-size: 20px;">DATA BERPINDAH TEMPAT</h1>
+        <h1 class="card-title" style="font-size: 28px;"><strong>DATA MUTASI BERPINDAH TEMPAT
+            </strong></h1>
 
     </div>
     <!-- /.card-header -->

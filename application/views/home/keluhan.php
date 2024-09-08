@@ -230,10 +230,10 @@
                     <img style="width: 180px; padding: 20px;" src="<?= base_url('assets/icon/logokbb.png') ?>" alt="">
                 </div>
                 <div class="col-4">
-                    <h6><a class="list" href="" style="color: black">Beranda</a></h6>
-                    <h6><a class="list" href="#about" style="color: black">Tentang Desa</a></h6>
-                    <h6><a class="list" href="#potensi" style="color: black">Potensi Desa</a></h6>
-                    <h6><a class="list" href="#keluhan" style="color: black">Keluhan</a></h6>
+                    <h6><a class="list" href="<?= base_url('page') ?>" style="color: black">Beranda</a></h6>
+                    <h6><a class="list" href="<?= base_url('home/tentangdesa') ?>" style="color: black">Tentang Desa</a></h6>
+                    <h6><a class="list" href="<?= base_url('home/potensidesa') ?>" style="color: black">Potensi Desa</a></h6>
+                    <h6><a class="list" href="" style="color: black">Keluhan</a></h6>
                 </div>
                 <div class="col-4">
                     Untuk melakukan pelayanan seperti pengajuan mutasi penduduk, anda dapat melakukan login terlebih dahulu pada menu 'Login' yang ada di pojok kanan atas. Loginlah sebagai User (Masyarakat), registrasi terlebih dahulu jika belum mempunyai akun. Selamat beraktivitas!

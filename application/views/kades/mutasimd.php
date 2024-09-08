@@ -27,9 +27,9 @@
             </div>
         <?php endif; ?>
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-            <a class="btn btn-primary" href="<?= base_url('kades/tambahmd') ?>" role="button" style="background-color: #8e44ad;">
+            <!-- <a class="btn btn-primary" href="<?= base_url('kades/tambahmd') ?>" role="button" style="background-color: #8e44ad;">
                 <i class="fas fa-plus"></i> Tambah Data
-            </a>
+            </a> -->
             <button onclick="printTable()" class="btn btn-primary" style="padding: 5px 20px; font-size: 15px;">
                 <i class="fas fa-print"></i> Print
             </button>
@@ -38,6 +38,7 @@
             <thead>
                 <tr style="text-align: center;">
                     <th>No</th>
+                    <th>NIK</th>
                     <th>Nama Penduduk</th>
                     <th>Tanggal Kematian</th>
                     <th>Tempat Kematian</th>
@@ -52,6 +53,7 @@
                 foreach ($detail_meninggal_disetujui as $data) : ?>
                     <tr>
                         <td><?= $no++; ?></td>
+                        <td><?= $data->nik; ?></td>
                         <td><?= $data->nama_penduduk; ?></td>
                         <td><?= $data->tanggal_kematian; ?></td>
                         <td><?= $data->tempat_kematian; ?></td>

@@ -17,7 +17,8 @@
 
 <div class="card">
     <div class="card-header">
-        <h1 class="card-title" style="font-size: 20px;">DATA MENINGGAL DUNIA</h1>
+        <h1 class="card-title" style="font-size: 28px;"><strong>DATA MUTASI MENINGGAL DUNIA
+            </strong></h1>
     </div>
     <!-- /.card-header -->
     <div class="card-body">

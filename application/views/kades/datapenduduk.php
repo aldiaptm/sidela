@@ -10,10 +10,9 @@
                 <?= $this->session->flashdata('message'); ?>
             </div>
         <?php endif; ?>
-        <a class="btn btn-primary" href="<?= base_url('kades/tambahpenduduk') ?>" role="button" style="margin-bottom: 1px; background-color: #8e44ad;">
+        <!-- <a class="btn btn-primary" href="<?= base_url('kades/tambahpenduduk') ?>" role="button" style="margin-bottom: 1px; background-color: #8e44ad;">
             <i class="fas fa-plus"></i> Tambah Data
-        </a>
-
+        </a> -->
         <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr style="text-align: center;">

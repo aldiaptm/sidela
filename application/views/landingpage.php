@@ -131,6 +131,10 @@
         .nav-wrapper>ul>li:hover .dropdown-content {
             display: block;
         }
+
+        .card {
+            height: 450px;
+        }
     </style>
 </head>
 
@@ -199,8 +203,58 @@
         <p class="pelayanan">Anda dapat mengakses pelayanan dengan melakukan login terlebih dahulu <br> Klik menu 'Login' di pojok kanan atas, lalu pilih user</p>
     </div>
 
+    <div class="container">
+        <div class="row">
+            <p class="center" style="font-size: 32px; font-weight: bold; margin-bottom: 30px;">
+                BERITA SEPUTAR DESA GALANGGANG
+            </p>
+            <div class="col s12 m4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="<?php echo base_url('assets/slider/11.jpg') ?>" alt="Berita 1">
+                        <span class="card-title"><strong>Launching SIDELA</strong></span>
+                    </div>
+                    <div class="card-content">
+                        <p>SIDELA merupakan Sistem Informasi Desa Galanggang. SIDELA juga Mencakup banyak informasi mengenai Desa Galanggang.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Baca Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="<?php echo base_url('assets/slider/11.jpg') ?>" alt="Berita 2">
+                        <span class="card-title"><strong>Pembinaan Masyarakat Lansia</strong></span>
+                    </div>
+                    <div class="card-content">
+                        <p>Pembinaan masyarakat lansia merupakan pembinaan yang diikuti oleh masyarakat yang berumur lebih dari 55 tahun.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Baca Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="<?php echo base_url('assets/slider/11.jpg') ?>" alt="Berita 3">
+                        <span class="card-title"><strong>Pembinaan Aparatur Desa</strong></span>
+                    </div>
+                    <div class="card-content">
+                        <p>Pembinaan ini ditujukan kepada seluruh Aparatur Desa, baik Ketua RT, Ketua RW dan Kepala Dusun atau KADUS.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Baca Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- SLIDER -->
-    <div class="news">
+    <!-- <div class="news">
         <div class="slider" style="margin-top: 10px;">
             <ul class="slides">
                 <li>
@@ -220,7 +274,7 @@
             </ul>
             <p class="pelayanan">Anda dapat mengakses pelayanan dengan melakukan login terlebih dahulu <br> Klik menu 'Login' di pojok kanan atas, lalu pilih user</p>
         </div>
-    </div>
+    </div> -->
     <section>
         <div class="footer">
             <div class="container">

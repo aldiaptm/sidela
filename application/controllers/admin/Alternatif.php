@@ -46,7 +46,7 @@ class Alternatif extends CI_Controller
         }
 
         $this->form_validation->set_message('required', 'Isi dulu %s');
-        $this->form_validation->set_message('is_unique', '%s sudah ada');
+        $this->form_validation->set_message('is_unique', 'NIK Sudah Ada');
 
         if ($this->form_validation->run()) {
 

@@ -96,7 +96,7 @@
                         <img src="<?= base_url('assets/template/') ?>dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block" style="color: #fff;">Kepala Desa</a>
+                        <a href="<?= base_url('kades/dashboard') ?>" class="d-block" style="color: #fff;">KEPALA DESA</a>
                     </div>
                 </div>
                 <!-- Sidebar Menu -->
