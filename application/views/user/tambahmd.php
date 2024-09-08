@@ -19,9 +19,13 @@ if (!$this->session->userdata('user_data')) {
     <form action="<?= base_url('user/tambah_aksi_meninggal') ?>" method="POST">
         <div class="card-body">
             <div class="form-group">
+                <label for="nik"> NIK</label>
+                <input type="text" class="form-control" id="nik" placeholder="Masukan NIK" name="nik">
+            </div>
+            <!-- <div class="form-group">
                 <label for="nama"> Nama Lengkap</label>
                 <input type="text" class="form-control" id="nama" placeholder="Masukan nama" name="nama">
-            </div>
+            </div> -->
             <div class="form-group">
                 <label for="tanggal_kematian">Tanggal Kematian</label>
                 <input type="date" class="form-control" id="tanggal_kematian" placeholder="Masukan tanggal kematian" name="tanggal_kematian">

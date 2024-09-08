@@ -8,8 +8,8 @@ if (!$this->session->userdata('user_data')) {
 
 <div class="card">
     <div class="card-header">
-        <h1 class="card-title" style="font-size: 20px;">DATA BERPINDAH TEMPAT</h1>
-
+        <h1 class="card-title" style="font-size: 28px;"><strong>DAFTAR PENGAJUAN MUTASI BERPINDAH TEMPAT
+            </strong></h1>
     </div>
     <!-- /.card-header -->
     <div class="card-body">
@@ -18,11 +18,16 @@ if (!$this->session->userdata('user_data')) {
                 <?= $this->session->flashdata('message'); ?>
             </div>
         <?php endif; ?>
-
+        <div style="margin-bottom: 20px;">
+            <p style="margin-bottom: 0;"><strong>Catatan:</strong></p>
+            <p style="margin-top: 5px;">Jika pengajuan telah disetujui, surat pengajuan mutasi dapat diambil di Kantor Desa
+            </p>
+        </div>
         <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr style="text-align: center;">
                     <th>No</th>
+                    <th>NIK</th>
                     <th>Nama Penduduk</th>
                     <th>Tanggal Pindah</th>
                     <th>Alamat Asli</th>
@@ -38,6 +43,7 @@ if (!$this->session->userdata('user_data')) {
                     <?php foreach ($detail_pindah as $data) : ?>
                         <tr>
                             <td><?php echo $no++; ?></td>
+                            <td><?php echo $data->nik; ?></td>
                             <td><?php echo $data->nama_penduduk; ?></td>
                             <td><?php echo $data->tanggal_pindah; ?></td>
                             <td><?php echo $data->alamat_asal; ?></td>

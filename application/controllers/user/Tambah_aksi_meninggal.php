@@ -20,10 +20,10 @@ class Tambah_aksi_meninggal extends CI_Controller
             redirect('user/tambahmd');
         } else {
             // Ambil nama dari input form
-            $nama = $this->input->post('nama');
+            $nik = $this->input->post('nik');
 
             // Cari id_penduduk berdasarkan nama menggunakan Datameninggal_model
-            $id_penduduk = $this->Datameninggal_model->get_id_penduduk_by_name($nama);
+            $id_penduduk = $this->Datameninggal_model->get_id_penduduk_by_nik($nik);
 
             if ($id_penduduk) {
                 // Siapkan data untuk disimpan ke dalam tabel detail_meninggal
@@ -48,7 +48,7 @@ class Tambah_aksi_meninggal extends CI_Controller
                 }
             } else {
                 // Jika id_penduduk tidak ditemukan berdasarkan nama
-                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Nama tidak ditemukan di database</div>');
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">NIK Bukan Penduduk Desa Galanggang</div>');
             }
 
             redirect('user/meninggaldunia');
@@ -58,7 +58,8 @@ class Tambah_aksi_meninggal extends CI_Controller
     private function _rules()
     {
         // Atur aturan validasi form
-        $this->form_validation->set_rules('nama', 'Nama', 'required');
+        $this->form_validation->set_rules('nik', 'NIK', 'required');
+        // $this->form_validation->set_rules('nama', 'Nama', 'required');
         $this->form_validation->set_rules('tanggal_kematian', 'Tanggal Kematian', 'required');
         $this->form_validation->set_rules('tempat_kematian', 'Tempat Kematian', 'required');
         $this->form_validation->set_rules('tempat_kelahiran', 'Tempat Kelahiran', 'required');
@@ -66,4 +67,3 @@ class Tambah_aksi_meninggal extends CI_Controller
         $this->form_validation->set_rules('keterangan', 'Keterangan', 'required');
     }
 }
-?>

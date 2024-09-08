@@ -17,7 +17,8 @@
 
 <div class="card">
     <div class="card-header">
-        <h1 class="card-title" style="font-size: 20px;">DATA USER (WARGA PENGGUNA SIDELA)</h1>
+        <h1 class="card-title" style="font-size: 28px;"><strong>DATA USER APLIKASI SIDELA
+            </strong></h1>
     </div>
     <!-- /.card-header -->
     <div class="card-body">

@@ -24,8 +24,8 @@ if (!$this->session->userdata('admin_data')) {
 
 <div class="card">
     <div class="card-header">
-        <h1 class="card-title" style="font-size: 20px;">DAFTAR MUTASI BERPINDAH TEMPAT</h1>
-
+        <h1 class="card-title" style="font-size: 28px;"><strong>DAFTAR PENGAJUAN MUTASI BERPINDAH TEMPAT
+            </strong></h1>
     </div>
     <!-- /.card-header -->
     <div class="card-body">

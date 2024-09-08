@@ -8,7 +8,8 @@
 
 <body>
     <div class="card-header">
-        <h1 class="card-title" style="font-size: 20px;">DATA KELUHAN</h1>
+        <h1 class="card-title" style="font-size: 28px;"><strong>KELUHAN MASYARAKAT DESA GALANGGANG
+            </strong></h1>
     </div>
     <table id="example1" class="table table-bordered table-striped">
         <thead>
