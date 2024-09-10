@@ -331,6 +331,9 @@
                         <li>Lebih dari 60 tahun sebanyak 1.139 orang</li>
                     </ol>
                 </div>
+            </div><br>
+            <div class="center" style="font-size: 18px">
+                <p>(Sumber: Desa Galanggang, 2023)</p>
             </div>
         </div>
     </section>
